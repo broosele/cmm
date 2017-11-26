@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#  Chipmunk manager
+#
+# This script manages the installation of chipmunk tools. Type 'cmm -h' for help.
+#
+# author: Bram Rooseleer
+# copyright: Bram Rooseleer
+# license: license.txt
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+python3 $DIR/cmm.py $@
